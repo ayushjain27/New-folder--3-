@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="mt-3" onclick="myFunction()">phone Number section</button>
+    <div class="container mt-3 d-flex flex-column">
+        Name: <input type="text">
+        Email: <input type="email">
+        Phone Number: <input type="number">
+        Output: <input type="text">
+        <button type="button" onclick="Submit()" class=" mt-3 btn btn-warning">Submit</button>
+    </div>
+    <script>
+    function myFunction() {
+        var n = prompt("Please enter your Phone number");
+        var remainder, sum = 0;
+        while(n)
+        {
+            remainder = n % 10;
+            sum = sum + remainder;
+            n = Math.floor(n/10);
+        }
+        var ans='';
+        for(let i=1;i<sum;i++){
+            if(i%4==0 && i%5==0){
+                ans += "FizzBuzz "; 
+            }else if(i%4==0){
+                  ans += "Fizz ";  
+            }else if(i%5==0){
+                ans += "Buzz "
+            }else{
+                ans = ans + i + " ";
+            }
+        }
+        alert(ans);
+      }
+      function Submit(){
+        alert("You have submitted");
+      }
+      </script>
+</body>
+
+</html>
